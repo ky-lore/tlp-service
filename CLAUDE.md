@@ -1,0 +1,38 @@
+# TopLevel Plumbing Services — Project Notes
+
+Static HTML/CSS/JS Google Ads landing page for TopLevel Plumbing Services ("TLP"), North Hollywood CA, serving LA & Orange County.
+
+## Git workflow — standing authorization
+
+The user has authorized automatic git management for this repo. Unless told otherwise for a specific change:
+
+- After making a meaningful set of file changes, stage, commit, and push to `origin main` without asking for confirmation each time.
+- Still follow standard git hygiene: review `git status`/`git diff` before staging, write a clear commit message describing the "why," never force-push, never skip hooks, never amend existing commits (always create new ones).
+- Still pause and ask before anything destructive or hard-to-reverse (history rewrites, branch deletion, resetting shared history) — auto-push of normal forward commits is in scope; those are not.
+- If a commit touches something that looks like it could contain secrets/credentials, stop and flag it instead of pushing.
+
+## Site structure
+
+Pure static site, no build step, no backend. Root-relative paths (`/css/style.css`, `/assets/...`) throughout.
+
+- `plumbing-services/index.html` — the paid LP (keywords: drain cleaning, hydro jetting, water heater installation), phone (818) 614-5787
+- `thank-you/index.html` — post-lead confirmation page
+- `index.html` — root redirect to `/plumbing-services`
+- `css/style.css` — full design system, self-hosted Work Sans (`assets/fonts/WORKSANS-OTF`)
+- `js/script.js` — FAQ accordion + Formspree AJAX submit (`https://formspree.io/tlpservices24.7@gmail.com`, no-signup email-endpoint pattern — first real submission needs a one-time confirmation click by the client) → redirects to `/thank-you`
+- Both LP pages are `noindex, nofollow` and excluded via `robots.txt` — paid-traffic only, not meant to be indexed
+- GTM container `GTM-T6F3B8VM` is installed on every page in this repo
+- No Google Ads conversion tag on `/thank-you` yet — needs the client's real conversion ID/label before adding (see comment placeholder in that file)
+
+## Brand
+
+- Colors: `#008cb4` (teal), `#004d65` (dark teal/navy), `#fecb3e` / `#ffd877` (gold), `#caf0fe` (sky)
+- Font: Work Sans (self-hosted OTF)
+- Logo: `assets/logo/581f47a9-cc67-4190-b8e6-8203c4a70956.jpg` (high-res, used as-is — has a white background, not transparent, so it's placed on white/light containers rather than altered)
+- Full brand/business facts: `onboarding-info/top-level-plumbing-onboarding.md` (license #1139342, phones, hours 24/7, service pricing, socials)
+
+## Open follow-ups
+
+- Google Ads conversion tracking (ID/label) not yet wired on `/thank-you`.
+- Formspree endpoint needs the client to click the one-time confirmation email before leads start arriving.
+- If TLP has a separate "main site" outside this repo (onboarding notes it may be built in Lovable), GTM has not been installed there — only the pages in this repo.

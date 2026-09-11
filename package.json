@@ -1,0 +1,12 @@
+{
+  "name": "tlp-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TopLevel Plumbing Services -- Google Ads landing page, static HTML/CSS/JS served via `serve`.",
+  "scripts": {
+    "start": "serve -l tcp://0.0.0.0:${PORT:-3000} ."
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  }
+}
