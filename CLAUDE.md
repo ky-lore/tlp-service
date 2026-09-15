@@ -19,7 +19,7 @@ Pure static site, no build step, no backend. Root-relative paths (`/css/style.cs
 - `thank-you/index.html` — post-lead confirmation page
 - `index.html` — root redirect to `/plumbing-services`
 - `css/style.css` — full design system, self-hosted Work Sans (`assets/fonts/WORKSANS-OTF`)
-- `js/script.js` — FAQ accordion + Formspree AJAX submit (`https://formspree.io/tlpservices24.7@gmail.com`, no-signup email-endpoint pattern — first real submission needs a one-time confirmation click by the client) → redirects to `/thank-you`
+- `js/script.js` — FAQ accordion only. The lead form on `plumbing-services/index.html` is a GHL/Advanced Marketers widget iframe (`https://link.advancedmarketers.co/widget/form/aEnM1s75vkirmB9jdC39`, loaded via `form_embed.js`) — post-submit redirect to `/thank-you` is configured inside that GHL form, not in this repo's code
 - Both LP pages are `noindex, nofollow` and excluded via `robots.txt` — paid-traffic only, not meant to be indexed
 - GTM container `GTM-T6F3B8VM` is installed on `plumbing-services/index.html` and `thank-you/index.html` only (the actual LPs) — the root `index.html` is just a redirect stub and does not carry it
 - No Google Ads conversion tag on `/thank-you` yet — needs the client's real conversion ID/label before adding (see comment placeholder in that file)
@@ -34,5 +34,6 @@ Pure static site, no build step, no backend. Root-relative paths (`/css/style.cs
 ## Open follow-ups
 
 - Google Ads conversion tracking (ID/label) not yet wired on `/thank-you`.
-- Formspree endpoint needs the client to click the one-time confirmation email before leads start arriving.
+- Confirm the GHL form (`aEnM1s75vkirmB9jdC39`) is configured to redirect to `/thank-you` on submit — that's set inside GoHighLevel, not in this repo.
 - If TLP has a separate "main site" outside this repo (onboarding notes it may be built in Lovable), GTM has not been installed there — only the pages in this repo.
+- Deploy note (2026-09-15): a Railway deploy of this repo was showing a raw directory listing at `/plumbing-services` instead of rendering the page — check the Railway service is running `npm start` (Nixpacks/Node), not a static/Caddy builder, and redeployed from the latest commit.

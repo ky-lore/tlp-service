@@ -166,40 +166,14 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   padding: 40px;
-  max-width: 900px;
+  max-width: 680px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 36px;
-  align-items: center;
 }
+.lp-form-copy { text-align: center; margin-bottom: 8px; }
 .lp-form-copy h2 { font-size: 1.5rem; }
 .lp-form-sub { font-size: 0.95rem; }
-.lp-form-copy .btn { margin-top: 6px; }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.form-grid .full { grid-column: 1 / -1; }
-.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
-.field label { font-size: 0.8rem; font-weight: 700; color: var(--teal-800); }
-.field input, .field select, .field textarea {
-  border: 1.5px solid var(--line);
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  color: var(--ink-900);
-  background: var(--off-white);
-}
-.field input:focus, .field select:focus, .field textarea:focus {
-  outline: none;
-  border-color: var(--teal-600);
-  background: var(--white);
-}
-.field textarea { resize: vertical; min-height: 80px; }
-.form-status { font-size: 0.88rem; font-weight: 600; margin-top: 10px; display: none; }
-.form-status.show { display: block; }
-.form-status.success { color: var(--teal-700); }
-.form-status.error { color: #b3261e; }
-.form-fineprint { font-size: 0.78rem; color: var(--ink-500); margin-top: 10px; }
+.lp-form-wrap { border-radius: 12px; overflow: hidden; }
+.lp-form-wrap iframe { display: block; }
 
 /* ---- Sections ---- */
 .section { padding: 88px 0; }
@@ -370,7 +344,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
-  .lp-form-card { grid-template-columns: 1fr; padding: 30px; }
+  .lp-form-card { padding: 28px 24px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .grid-5 { grid-template-columns: repeat(3, 1fr); }
@@ -380,7 +354,6 @@ button { font-family: inherit; cursor: pointer; }
   .header-cta .hours { display: none; }
   .hero { padding: 40px 0 80px; }
   .lp-quote-wrap { margin-top: -48px; }
-  .form-grid { grid-template-columns: 1fr; }
   .grid-3, .grid-5 { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .cta-banner { padding: 32px; text-align: center; justify-content: center; }

@@ -7,7 +7,7 @@ Static HTML/CSS/JS, no build step, served via `serve` (see `railway.json` / `ser
 - `/plumbing-services` — the paid LP (drain cleaning, hydro jetting, water heater installation)
 - `/thank-you` — post-lead confirmation page
 - `css/style.css` — design system (brand colors, components)
-- `js/script.js` — FAQ accordion + Formspree AJAX form submit → redirects to `/thank-you`
+- `js/script.js` — FAQ accordion. Lead form is a GHL/Advanced Marketers widget iframe (redirect to `/thank-you` configured in GHL)
 - `assets/logo`, `assets/fonts` — brand assets from client onboarding
 - `onboarding-info/` — source onboarding doc (business facts, brand kit, pricing)
 
