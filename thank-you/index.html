@@ -16,6 +16,115 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="canonical" href="https://tlpservice.com/thank-you">
 <link rel="icon" href="/assets/logo/581f47a9-cc67-4190-b8e6-8203c4a70956.jpg">
 <link rel="stylesheet" href="/css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Thank-you page styles. Everything is scoped to .ty-wrap / .ty-card so it
+     cannot bleed into any other page on the site. Safe to move into
+     /css/style.css later and delete this block. -->
+<style>
+  body{margin:0;}
+
+  .ty-wrap{
+    box-sizing:border-box;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:48px 22px 64px;
+    font-family:"Inter",Arial,Helvetica,sans-serif;
+    background-color:#0A3A4C;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath fill='%230A3A4C' fill-opacity='.55' d='M0 130V78l150-34 130 30 145-46 160 44 150-38 155 40 140-30 160 36 150-28v78z'/%3E%3C/svg%3E"),
+      linear-gradient(168deg,#0A3A4C 0%,#0F4D63 58%,#12607C 100%);
+    background-repeat:no-repeat,no-repeat;
+    background-position:bottom center,center center;
+    background-size:100% 130px,cover;
+  }
+
+  .ty-wrap *,.ty-wrap *::before,.ty-wrap *::after{box-sizing:border-box;}
+
+  .ty-card{
+    width:100%;
+    max-width:540px;
+    background:#FFFFFF;
+    border-radius:14px;
+    padding:44px 38px 40px;
+    text-align:center;
+    box-shadow:0 22px 50px rgba(4,26,34,.28);
+  }
+
+  .ty-card > img{
+    display:block;
+    width:186px;
+    height:auto;
+    margin:0 auto 26px;
+  }
+
+  .ty-check{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    background:#F8C53D;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 22px;
+  }
+  .ty-check svg{width:32px;height:32px;fill:#0A3A4C;}
+
+  .ty-card h1{
+    font-family:"Poppins","Inter",Arial,sans-serif;
+    font-weight:700;
+    font-size:clamp(24px,4.2vw,31px);
+    line-height:1.25;
+    letter-spacing:-.01em;
+    color:#0B2B36;
+    margin:0 0 14px;
+  }
+
+  .ty-card p{
+    font-size:16px;
+    line-height:1.65;
+    color:#5B7078;
+    max-width:410px;
+    margin:0 auto 28px;
+  }
+
+  .ty-actions{display:flex;flex-direction:column;gap:12px;}
+
+  .ty-card .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family:"Poppins","Inter",Arial,sans-serif;
+    font-weight:600;
+    text-decoration:none;
+    border:2px solid transparent;
+    border-radius:999px;
+    transition:background-color .18s ease,border-color .18s ease,color .18s ease;
+  }
+  .ty-card .btn svg{width:18px;height:18px;flex:none;}
+  .ty-card .btn-teal{background:#0E6C8C;color:#FFFFFF;}
+  .ty-card .btn-teal:hover{background:#0A5570;}
+  .ty-card .btn-lg{font-size:16px;padding:15px 28px;}
+  .ty-card .btn-block{display:flex;width:100%;}
+  .ty-card .btn:focus-visible{outline:3px solid #F8C53D;outline-offset:3px;}
+
+  @media (max-width:520px){
+    .ty-wrap{padding:32px 16px 48px;}
+    .ty-card{padding:34px 24px 32px;border-radius:12px;}
+    .ty-card > img{width:152px;margin-bottom:22px;}
+    .ty-card p{font-size:15.5px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .ty-wrap *{transition:none !important;animation:none !important;}
+  }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
