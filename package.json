@@ -4,7 +4,7 @@
   "private": true,
   "description": "TopLevel Plumbing Services -- Google Ads landing page, static HTML/CSS/JS served via `serve`.",
   "scripts": {
-    "start": "serve -l tcp://0.0.0.0:${PORT:-3000} ."
+    "start": "serve -l tcp://0.0.0.0:${PORT:-3000} public"
   },
   "dependencies": {
     "serve": "^14.2.3"

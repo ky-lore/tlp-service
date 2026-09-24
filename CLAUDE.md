@@ -15,6 +15,10 @@ The user has authorized automatic git management for this repo. Unless told othe
 
 Pure static site, no build step, no backend. Root-relative paths (`/css/style.css`, `/assets/...`) throughout.
 
+**Only `public/` is served** (`serve ... public`, with `directoryListing: false` in `public/serve.json`). Every web-facing file lives under `public/`; repo-only files (`package.json`, `node_modules/`, `CLAUDE.md`, `onboarding-info/`) stay at the root so they are never reachable over HTTP. Never change the start command back to `serve .` — that published `node_modules/` (including Windows `.exe` files) on the ad domain and got every Google Ad disapproved for "Compromised Site" / "Malicious software" (fixed 2026-09-24).
+
+Paths below are relative to `public/`:
+
 - `plumbing-services/index.html` — the paid LP (keywords: drain cleaning, hydro jetting, water heater installation), phone (818) 614-5787
 - `thank-you/index.html` — post-lead confirmation page
 - `index.html` — root redirect to `/plumbing-services`
@@ -37,3 +41,4 @@ Pure static site, no build step, no backend. Root-relative paths (`/css/style.cs
 - Confirm the GHL form (`aEnM1s75vkirmB9jdC39`) is configured to redirect to `/thank-you` on submit — that's set inside GoHighLevel, not in this repo.
 - If TLP has a separate "main site" outside this repo (onboarding notes it may be built in Lovable), GTM has not been installed there — only the pages in this repo.
 - Deploy note (2026-09-15): a Railway deploy of this repo was showing a raw directory listing at `/plumbing-services` instead of rendering the page — check the Railway service is running `npm start` (Nixpacks/Node), not a static/Caddy builder, and redeployed from the latest commit.
+- After the 2026-09-24 `public/` fix deploys, request a review of the disapproved ads in Google Ads (Policy manager → Appeal) so they get re-crawled.

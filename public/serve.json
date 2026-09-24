@@ -1,6 +1,7 @@
 {
   "cleanUrls": false,
   "trailingSlash": false,
+  "directoryListing": false,
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/plumbing-services", "destination": "/plumbing-services/index.html" },
